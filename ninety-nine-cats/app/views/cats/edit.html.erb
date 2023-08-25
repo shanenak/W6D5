@@ -14,9 +14,9 @@
      <br>
     <label> Color: </label>
     <select> 
-        <option value="<%= @c.color %>" disabled selected> -- select a color -- </option>
+        <option value="<%= @c.color %>" disabled > -- select a color -- </option>
         <% Cat::CAT_COLORS.each do |color| %>
-            <option value="<%= color %>"> <%= color %></option>
+            <option value="<%= color %>" <% selected if @c.color == color%>> <%= color %></option>
             <!---
             <option value="actual value 1">Display Text 1</option>
             <option value="actual value 2">Display Text 2</option>
@@ -26,8 +26,9 @@
     </select>
     <br>
     <label>Sex:
-        <input type="radio" name="cat[sex]" value="M"> Male
-        <input type="radio" name="cat[sex]" value="F"> Female
+        <% selected = @c.sex == 'M' %>
+        <input type="radio" name="cat[sex]" value="M" <%= checked if selected%>> Male
+        <input type="radio" name="cat[sex]" value="F" <%= checked unless selected%>> Female
     </label>
     <br>
     <label>Description:
