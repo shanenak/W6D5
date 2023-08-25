@@ -1,35 +1,33 @@
 <h1> Cat Show Page </h1>
 
 <a href= "<%= cats_url %>"> Cat Index Page </a>
-
-<a href= "<%= cat_url(@c) %>"> Cat Show Page </a>
 <table>
     <thead>
         <tr>
             <th>Name</th>
-            <th><% @c.name %></th>
+            <th><%= @c.name %></th>
         </tr>
     </thead>
 
     <tbody>
         <tr>
             <td>Birthdate</td>
-            <td><% @c.birth_date %></td>
+            <td><%= @c.birth_date %></td>
         </tr>
 
         <tr>
             <td>Color</td>
-            <td><% @c.color %></td>
+            <td><%= @c.color %></td>
         </tr>
 
         <tr>
             <td>Sex</td>
-            <td><% @c.sex %></td>
+            <td><%= @c.sex %></td>
         </tr>
 
         <tr>
             <td>Description</td>
-            <td><% @c.description %></td>
+            <td><%= @c.description %></td>
         </tr>
     </tbody>
         

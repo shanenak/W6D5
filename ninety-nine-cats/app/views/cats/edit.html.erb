@@ -1,19 +1,20 @@
-<h1>New Cat</h1>
-
-<form action= <%= cats_url %> method="POST">
+<h1> Edit Cat </h1>
+<form action=<% edit_cat_url(@c) %>  method='POST' >
+    <input type='hidden' name='_method' value='PATCH'>
     <label>Name:
-        <input type="text" name="cat[name]" value="">
+    
+        <input type="text" name="cat[name]" value="<%= @c.name %>">
     </label>
     <br>
     <label>Birthdate:
         <input type="date" name="cat[birth_date]"
-            value="">
+            value="<%= @c.birth_date %>">
     </label>
      <!-- <input type="text" name="cat[color]" value=""> -->
      <br>
     <label> Color: </label>
     <select> 
-        <option value="" disabled selected> -- select a color -- </option>
+        <option value="<%= @c.color %>" disabled selected> -- select a color -- </option>
         <% Cat::CAT_COLORS.each do |color| %>
             <option value="<%= color %>"> <%= color %></option>
             <!---
@@ -30,7 +31,6 @@
     </label>
     <br>
     <label>Description:
-        <textarea type="text" name="cat[description]" value=""></textarea>
+        <textarea type="text" name="cat[description]" value="<%= @c.description %>"></textarea>
     </label>
-    
 </form>
